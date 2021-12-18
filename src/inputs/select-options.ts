@@ -1,5 +1,3 @@
-import { DifferenceApplicator } from '../utils/difference-applicator';
-
 export class SelectOptions {
   initiate (form: HTMLElement) {
     const SELECT_BASED_INPUTS = 'select'
@@ -9,10 +7,6 @@ export class SelectOptions {
       const selectedValue = select.options[select.selectedIndex].value
 
       select.setAttribute('data-onform-initial-value', selectedValue)
-
-      select.addEventListener('change', () => {
-        new DifferenceApplicator().initiate(form)
-      })
     })
   }
 }

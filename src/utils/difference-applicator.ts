@@ -1,7 +1,7 @@
 import { ChangeReporter } from './change-reporter';
 
 export class DifferenceApplicator {
-  initiate (form: HTMLElement) {
+  initiate (form: HTMLElement, onFormChangedFunction: String, onFormNotChangedFunction: String) {
     const fromInputs = form.querySelectorAll('[data-onform-initial-value]')
 
     fromInputs.forEach((input: HTMLInputElement) => {
@@ -22,6 +22,6 @@ export class DifferenceApplicator {
       }
     })
 
-    new ChangeReporter().initiate(form)
+    new ChangeReporter().initiate(form, onFormChangedFunction, onFormNotChangedFunction)
   }
 }
